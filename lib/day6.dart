@@ -1,7 +1,7 @@
 import 'dart:io';
 
-Future<int> part1() async {
-  final input = await File('assets/day6/input.txt').readAsLines();
+int part1() {
+  final input = File('assets/day6/input.txt').readAsLinesSync();
   final List<int> times = input[0]
       .split(':')[1]
       .trim()
@@ -31,8 +31,8 @@ Future<int> part1() async {
   return wins;
 }
 
-Future<int> part2() async {
-  final input = await File('assets/day6/input.txt').readAsLines();
+int part2() {
+  final input = File('assets/day6/input.txt').readAsLinesSync();
   final int time = int.parse(input[0].split(':')[1].trim().replaceAll(RegExp(r'\s+'), ''));
   final int distance = int.parse(input[1].split(':')[1].trim().replaceAll(RegExp(r'\s+'), ''));
 

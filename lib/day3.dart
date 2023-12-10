@@ -1,7 +1,7 @@
 import 'dart:io';
 
-Future<int> part1() async {
-  final input = await File('assets/day3/input.txt').readAsLines();
+int part1() {
+  final input = File('assets/day3/input.txt').readAsLinesSync();
   final numberSearch = RegExp(r'(\d+)');
   final symbolSearch = RegExp(r'[^.\d]');
   final List<PositionedNumber> numbers = [];
@@ -37,8 +37,8 @@ Future<int> part1() async {
       .reduce((value, element) => value + element);
 }
 
-Future<int> part2() async {
-  final input = await File('assets/day3/input.txt').readAsLines();
+int part2() {
+  final input = File('assets/day3/input.txt').readAsLinesSync();
   final numberSearch = RegExp(r'(\d+)');
   final gearSearch = RegExp(r'\*');
   final List<PositionedNumber> numbers = [];

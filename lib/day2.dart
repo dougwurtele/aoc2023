@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'dart:math';
 
-Future<int> part1() async {
+int part1() {
   final input = File('assets/day2/input.txt');
-  final data = await input.readAsLines();
+  final data = input.readAsLinesSync();
   final int maxRed = 12;
   final int maxGreen = 13;
   final int maxBlue = 14;
@@ -28,9 +28,9 @@ Future<int> part1() async {
       .reduce((value, element) => value + element);
 }
 
-Future<int> part2() async {
+int part2() {
   final input = File('assets/day2/input.txt');
-  final data = await input.readAsLines();
+  final data = input.readAsLinesSync();
   return data.where((element) => element.trim().isNotEmpty).map((line) {
     List<CubePull> pulls = line
         .split(':')[1]

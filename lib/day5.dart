@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'dart:math';
 
-Future<int> part1() async {
-  final input = await File('assets/day5/input.txt').readAsLines();
+int part1() {
+  final input = File('assets/day5/input.txt').readAsLinesSync();
   final List<int> seeds =
       input[0].split(': ')[1].split(' ').map((e) => int.parse(e)).toList();
   final List<List<DataMap>> maps = [];
@@ -39,8 +39,8 @@ Future<int> part1() async {
   }).reduce((value, element) => min(value, element));
 }
 
-Future<int> part2() async {
-  final input = await File('assets/day5/input.txt').readAsLines();
+int part2() {
+  final input = File('assets/day5/input.txt').readAsLinesSync();
   final List<int> seedsInput =
   input[0].split(': ')[1].split(' ').map((e) => int.parse(e)).toList();
 

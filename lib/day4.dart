@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'dart:math';
 
-Future<num> part1() async {
-  final data = await File('assets/day4/input.txt').readAsLines();
+int part1() {
+  final data = File('assets/day4/input.txt').readAsLinesSync();
   return data
       .map((e) {
         final winners = e
@@ -22,12 +22,12 @@ Future<num> part1() async {
             .length;
       })
       .where((element) => element > 0)
-      .map((e) => pow(2, e - 1))
+      .map((e) => pow(2, e - 1).toInt())
       .reduce((value, element) => value + element);
 }
 
-Future<int> part2() async {
-  final data = await File('assets/day4/input.txt').readAsLines();
+int part2() {
+  final data = File('assets/day4/input.txt').readAsLinesSync();
   for (int i = 0; i < data.length; i++) {
     final input = data[i];
     final winners = input
@@ -54,8 +54,8 @@ Future<int> part2() async {
   return data.length;
 }
 
-Future<int> part2Optimized() async {
-  final data = await File('assets/day4/input.txt').readAsLines();
+int part2Optimized() {
+  final data = File('assets/day4/input.txt').readAsLinesSync();
   final Map<int, int> gameMatches = {};
   for (int i = 0; i < data.length; i++) {
     final winners = data[i]

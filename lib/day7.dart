@@ -1,7 +1,7 @@
 import 'dart:io';
 
-Future<int> part1() async {
-  final input = await File('assets/day7/input.txt').readAsLines();
+int part1() {
+  final input = File('assets/day7/input.txt').readAsLinesSync();
   List<Hand> hands = input.map((e) => Hand.fromString(e)).toList();
   hands.sort();
 
@@ -12,8 +12,8 @@ Future<int> part1() async {
   return winnings;
 }
 
-Future<int> part2() async {
-  final input = await File('assets/day7/input.txt').readAsLines();
+int part2() {
+  final input = File('assets/day7/input.txt').readAsLinesSync();
   List<Hand> hands = input.map((e) => Hand.fromString(e)).toList();
   hands.sort((a, b) {
     final aType = a.typeWithJokers;

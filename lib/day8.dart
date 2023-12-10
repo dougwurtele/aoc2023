@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:dart_numerics/dart_numerics.dart' as numerics;
 
-Future<int> part1() async {
-  final input = await File('assets/day8/input.txt').readAsLines();
+int part1() {
+  final input = File('assets/day8/input.txt').readAsLinesSync();
   final List<String> instructions = input[0].split('');
   final List<Node> nodes = [];
   for (int i = 2; i < input.length; i++) {
@@ -26,8 +26,8 @@ Future<int> part1() async {
   return step;
 }
 
-Future<int> part2() async {
-  final input = await File('assets/day8/input.txt').readAsLines();
+int part2() {
+  final input = File('assets/day8/input.txt').readAsLinesSync();
   final List<String> instructions = input[0].split('');
   final List<Node> nodes = [];
   for (int i = 2; i < input.length; i++) {

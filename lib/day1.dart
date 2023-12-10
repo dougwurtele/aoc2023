@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'dart:math';
 
-Future<int> part1() async {
+int part1() {
   final input = File('assets/day1/input.txt');
-  final data = await input.readAsLines();
+  final data = input.readAsLinesSync();
   final List<List<int>> values = data
       .map((e) => e
           .split('')
@@ -16,9 +16,9 @@ Future<int> part1() async {
       .reduce((value, element) => value + element);
 }
 
-Future<int> part2() async {
+int part2() {
   final input = File('assets/day1/input.txt');
-  final data = await input.readAsLines();
+  final data = input.readAsLinesSync();
   final List<List<int>> values = data.map((e) {
     var result = e;
     for (int i = 0;
@@ -104,8 +104,8 @@ Future<int> part2() async {
   return values.map((e) => e.first * 10 + e.last).reduce((value, element) => value + element);
 }
 
-Future<int> part2Regex() async {
-  final input = await File('assets/day1/input.txt').readAsLines();
+int part2Regex() {
+  final input = File('assets/day1/input.txt').readAsLinesSync();
   final search = RegExp(r'(?=(one|two|three|four|five|six|seven|eight|nine|\d))');
   return input.map((e) => search.allMatches(e))
   .map((e) {

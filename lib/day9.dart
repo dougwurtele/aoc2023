@@ -1,6 +1,6 @@
 import 'dart:io';
 
-Future<int> part1() async {
+int part1() {
   return File('assets/day9/input.txt')
       .readAsLinesSync()
       .map((line) => line.split(' ').map((e) => int.parse(e)).toList())
@@ -27,7 +27,7 @@ Future<int> part1() async {
   }).reduce((value, element) => value + element);
 }
 
-Future<int> part2() async {
+int part2() {
   return File('assets/day9/input.txt')
       .readAsLinesSync()
       .map((line) => line.split(' ').map((e) => int.parse(e)).toList())
