@@ -28,34 +28,6 @@ int part1() {
 
 int part2() {
   final data = File('assets/day4/input.txt').readAsLinesSync();
-  for (int i = 0; i < data.length; i++) {
-    final input = data[i];
-    final winners = input
-        .split(':')[1]
-        .split('|')[0]
-        .trim()
-        .split(RegExp(r'\s+'))
-        .map((w) => int.parse(w))
-        .toList();
-    final adds = input
-        .split(':')[1]
-        .split('|')[1]
-        .trim()
-        .split(RegExp(r'\s+'))
-        .map((p) => int.parse(p))
-        .where((element) => winners.contains(element))
-        .length;
-    final card =
-        int.parse(RegExp(r'Card\s+(\d+)').firstMatch(input)!.group(1)!);
-    for (int a = card + 1; a <= card + adds; a++) {
-      data.add(data[a - 1]);
-    }
-  }
-  return data.length;
-}
-
-int part2Optimized() {
-  final data = File('assets/day4/input.txt').readAsLinesSync();
   final Map<int, int> gameMatches = {};
   for (int i = 0; i < data.length; i++) {
     final winners = data[i]
