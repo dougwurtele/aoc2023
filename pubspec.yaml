@@ -10,6 +10,7 @@ environment:
 dependencies:
   # path: ^1.8.0
   dart_numerics: ^0.0.6
+  pathfinding: ^3.0.1
 
 dev_dependencies:
   lints: ^2.0.0
