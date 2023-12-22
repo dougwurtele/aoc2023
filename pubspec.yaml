@@ -11,6 +11,7 @@ dependencies:
   # path: ^1.8.0
   dart_numerics: ^0.0.6
   pathfinding: ^3.0.1
+  scidart: ^0.0.2-dev.12
 
 dev_dependencies:
   lints: ^2.0.0
